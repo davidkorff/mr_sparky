@@ -1,20 +1,48 @@
-# Ignore node modules and build artifacts
-node_modules/
-.next/
-out/
-build/
-
-# Ignore environment files
-.env
-.env.*
-
-# Ignore database files
-*.db
-*.sqlite
-
-# Ignore logs
-*.log
-
-# Ignore OS files
-.DS_Store
-Thumbs.db 
+{
+  "javascript": {
+    "formatter": "prettier",
+    "formatterOptions": {
+      "singleQuote": true,
+      "trailingComma": "es5",
+      "printWidth": 100,
+      "semi": true,
+      "bracketSpacing": true
+    },
+    "linter": "eslint",
+    "linterOptions": {
+      "env": {
+        "node": true,
+        "es6": true
+      },
+      "extends": [
+        "eslint:recommended",
+        "plugin:react/recommended"
+      ],
+      "rules": {
+        "no-console": "warn",
+        "no-unused-vars": "warn",
+        "react/prop-types": "warn"
+      }
+    }
+  },
+  "typescript": {
+    "formatter": "prettier",
+    "formatterOptions": {
+      "singleQuote": true,
+      "trailingComma": "es5",
+      "printWidth": 100,
+      "semi": true,
+      "bracketSpacing": true
+    },
+    "linter": "eslint",
+    "linterOptions": {
+      "parser": "@typescript-eslint/parser",
+      "plugins": ["@typescript-eslint"],
+      "extends": [
+        "eslint:recommended",
+        "plugin:@typescript-eslint/recommended",
+        "plugin:react/recommended"
+      ]
+    }
+  }
+} 
