@@ -1,71 +1,53 @@
-# Miller Lights - Electrician Website
+# Miller Lights Website
 
-A professional website for Miller Lights, an electrician company, built with Next.js, Tailwind CSS, and Prisma.
+Professional website for Miller Lights electrical services. Built with Node.js, Express, React, and PostgreSQL.
 
 ## Features
 
 - Modern, responsive design
-- Contact form with SendGrid email integration
-- Admin CMS for managing content, services, and messages
-- Authentication system for admin access
-- Future capability for bill payment integration
+- Contact form with SendGrid integration
+- Admin dashboard for content management
+- Bill payment system (coming soon)
 
-## Tech Stack
+## Development Setup
 
-- **Frontend**: Next.js 14, React, Tailwind CSS, Headless UI
-- **Backend**: Next.js API Routes, Prisma ORM
-- **Database**: SQLite (development), PostgreSQL (production)
-- **Authentication**: JWT-based auth system
-- **Email**: SendGrid
-- **Deployment**: Render
+1. Install dependencies:
+   ```bash
+   npm install
+   cd client && npm install
+   ```
 
-## Getting Started
+2. Create a `.env` file in the root directory with:
+   ```
+   PORT=4000
+   DATABASE_URL=your_postgres_connection_string
+   SENDGRID_API_KEY=your_sendgrid_api_key
+   ADMIN_EMAIL=your_admin_email
+   ADMIN_PASSWORD=your_admin_password
+   SESSION_SECRET=your_session_secret
+   ```
 
-### Prerequisites
+3. Set up the PostgreSQL database:
+   ```bash
+   psql -U postgres
+   CREATE DATABASE miller_lights;
+   ```
 
-- Node.js 18+ and npm
+4. Run the development server:
+   ```bash
+   npm run dev:full
+   ```
 
-### Installation
+The site will be available at:
+- Frontend: http://localhost:3000
+- Backend API: http://localhost:4000
+- Admin Dashboard: http://localhost:4000/admin
 
-1. Clone the repository
-2. Install dependencies
+## Production Deployment
 
-```bash
-npm install
-```
-
-3. Set up environment variables by copying the `.env.example` file to `.env` and filling in your values
-
-4. Initialize the database
-
-```bash
-npx prisma db push
-```
-
-5. Run the development server
-
-```bash
-npm run dev
-```
-
-6. Open [http://localhost:4000](http://localhost:4000) in your browser
-
-## Deployment
-
-This project is configured for deployment on Render. Follow these steps:
+This application is configured for deployment on Render. Follow these steps:
 
 1. Create a new Web Service on Render
 2. Connect your GitHub repository
-3. Configure environment variables
-4. Add a PostgreSQL database
-
-## Admin Access
-
-Access the admin panel at `/admin/login` with the credentials set in your `.env` file:
-
-- Email: ADMIN_EMAIL
-- Password: ADMIN_PASSWORD
-
-## License
-
-This project is licensed under the MIT License.
+3. Add the environment variables from your `.env` file
+4. Deploy! 
