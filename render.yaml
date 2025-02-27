@@ -23,6 +23,7 @@ services:
         sync: false
       - key: ADMIN_PASSWORD
         sync: false
+    staticPublishPath: ./client/build
 
   - type: postgres
     name: miller-lights-db

@@ -19,7 +19,8 @@
     "helmet": "^7.1.0",
     "express-session": "^1.17.3",
     "express-formidable": "^1.2.0",
-    "bcryptjs": "^2.4.3"
+    "bcryptjs": "^2.4.3",
+    "axios": "^1.6.7"
   },
   "devDependencies": {
     "nodemon": "^3.0.2",
