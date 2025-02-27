@@ -23,11 +23,24 @@ const pool = new Pool({
 app.use(helmet());
 app.use(cors());
 app.use(express.json());
-app.use(session({
-  secret: process.env.SESSION_SECRET,
+
+// Session configuration
+const sessionConfig = {
+  secret: process.env.SESSION_SECRET || 'fallback-secret-key-for-dev',
   resave: false,
-  saveUninitialized: true
-}));
+  saveUninitialized: false,
+  cookie: {
+    secure: process.env.NODE_ENV === 'production',
+    httpOnly: true,
+    maxAge: 1000 * 60 * 60 * 24 // 24 hours
+  }
+};
+
+if (process.env.NODE_ENV === 'production') {
+  app.set('trust proxy', 1); // trust first proxy
+}
+
+app.use(session(sessionConfig));
 
 // SendGrid setup
 sgMail.setApiKey(process.env.SENDGRID_API_KEY);
