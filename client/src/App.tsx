@@ -12,42 +12,107 @@ import About from './pages/About';
 const theme = createTheme({
   palette: {
     primary: {
-      main: '#1976d2', // A professional blue color
-      light: '#42a5f5',
-      dark: '#1565c0',
+      main: '#0f3057', // A deeper, more professional blue
+      light: '#335c81',
+      dark: '#05182a',
     },
     secondary: {
-      main: '#ffd700', // A gold accent color
-      light: '#ffeb3b',
-      dark: '#fbc02d',
+      main: '#ff9e43', // A warm orange/gold accent
+      light: '#ffbc75',
+      dark: '#c17000',
     },
     background: {
-      default: '#ffffff',
-      paper: '#f5f5f5',
+      default: '#f8f9fa',
+      paper: '#ffffff',
+    },
+    text: {
+      primary: '#1e2022',
+      secondary: '#52616b',
     },
   },
   typography: {
-    fontFamily: '"Roboto", "Helvetica", "Arial", sans-serif',
+    fontFamily: '"Poppins", "Roboto", "Helvetica", "Arial", sans-serif',
     h1: {
-      fontSize: '2.5rem',
+      fontSize: '3rem',
       fontWeight: 700,
+      lineHeight: 1.2,
+      letterSpacing: '-0.01562em',
     },
     h2: {
-      fontSize: '2rem',
+      fontSize: '2.25rem',
       fontWeight: 600,
+      lineHeight: 1.3,
+      letterSpacing: '-0.00833em',
     },
     h3: {
       fontSize: '1.75rem',
       fontWeight: 600,
+      lineHeight: 1.4,
+      letterSpacing: '0em',
     },
+    h4: {
+      fontWeight: 600,
+      lineHeight: 1.4,
+    },
+    body1: {
+      lineHeight: 1.7,
+    },
+    button: {
+      textTransform: 'none',
+      fontWeight: 500,
+    },
+  },
+  shape: {
+    borderRadius: 8,
   },
   components: {
     MuiButton: {
       styleOverrides: {
         root: {
           borderRadius: 8,
-          textTransform: 'none',
-          padding: '8px 24px',
+          paddingTop: '10px',
+          paddingBottom: '10px',
+          paddingLeft: '24px',
+          paddingRight: '24px',
+          boxShadow: 'none',
+          transition: 'all 0.3s ease',
+          '&:hover': {
+            transform: 'translateY(-2px)',
+            boxShadow: '0 4px 12px rgba(0,0,0,0.15)',
+          },
+        },
+        contained: {
+          '&:hover': {
+            boxShadow: '0 6px 15px rgba(0,0,0,0.2)',
+          },
+        },
+      },
+    },
+    MuiCard: {
+      styleOverrides: {
+        root: {
+          borderRadius: 12,
+          boxShadow: '0 4px 20px rgba(0,0,0,0.08)',
+          transition: 'all 0.3s ease',
+          '&:hover': {
+            transform: 'translateY(-5px)',
+            boxShadow: '0 8px 30px rgba(0,0,0,0.12)',
+          },
+        },
+      },
+    },
+    MuiAppBar: {
+      styleOverrides: {
+        root: {
+          boxShadow: '0 2px 10px rgba(0,0,0,0.05)',
+        },
+      },
+    },
+    MuiContainer: {
+      styleOverrides: {
+        root: {
+          paddingTop: '2rem',
+          paddingBottom: '2rem',
         },
       },
     },
@@ -61,7 +126,7 @@ function App() {
       <Router>
         <div style={{ display: 'flex', flexDirection: 'column', minHeight: '100vh' }}>
           <Navbar />
-          <main style={{ flexGrow: 1, padding: '24px 0' }}>
+          <main style={{ flexGrow: 1 }}>
             <Routes>
               <Route path="/" element={<Home />} />
               <Route path="/services" element={<Services />} />
