@@ -1,36 +1,71 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Miller Lights - Electrician Website
+
+A professional website for Miller Lights, an electrician company, built with Next.js, Tailwind CSS, and Prisma.
+
+## Features
+
+- Modern, responsive design
+- Contact form with SendGrid email integration
+- Admin CMS for managing content, services, and messages
+- Authentication system for admin access
+- Future capability for bill payment integration
+
+## Tech Stack
+
+- **Frontend**: Next.js 14, React, Tailwind CSS, Headless UI
+- **Backend**: Next.js API Routes, Prisma ORM
+- **Database**: SQLite (development), PostgreSQL (production)
+- **Authentication**: JWT-based auth system
+- **Email**: SendGrid
+- **Deployment**: Render
 
 ## Getting Started
 
-First, run the development server:
+### Prerequisites
+
+- Node.js 18+ and npm
+
+### Installation
+
+1. Clone the repository
+2. Install dependencies
+
+```bash
+npm install
+```
+
+3. Set up environment variables by copying the `.env.example` file to `.env` and filling in your values
+
+4. Initialize the database
+
+```bash
+npx prisma db push
+```
+
+5. Run the development server
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+6. Open [http://localhost:4000](http://localhost:4000) in your browser
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Deployment
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+This project is configured for deployment on Render. Follow these steps:
 
-## Learn More
+1. Create a new Web Service on Render
+2. Connect your GitHub repository
+3. Configure environment variables
+4. Add a PostgreSQL database
 
-To learn more about Next.js, take a look at the following resources:
+## Admin Access
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Access the admin panel at `/admin/login` with the credentials set in your `.env` file:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+- Email: ADMIN_EMAIL
+- Password: ADMIN_PASSWORD
 
-## Deploy on Vercel
+## License
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+This project is licensed under the MIT License.
